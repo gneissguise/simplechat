@@ -1,0 +1,16 @@
+.Schat {
+  marin: auto;
+  height: 800px;
+  width: 800px;
+  border: 2px solid green;
+}
+
+.SchatBox {
+  height: 90%;
+  width: 100%;
+}
+
+.SchatForm {
+  height: 10%;
+  width: 100%;
+}

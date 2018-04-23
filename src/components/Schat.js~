@@ -1,0 +1,21 @@
+import React, { Component } from 'react';
+
+import SchatBox from './SchatBox';
+import SchatIn from './SchatIn';
+import SchatOut from './SchatOut';
+import SchatForm from './SchatForm';
+
+import '../styles/Styles.css';
+
+class Schat extends Component {
+  render() {
+    return (
+      <div className="Schat">
+        <SchatBox />
+        <SchatForm />
+      </div>
+    );
+  }
+}
+
+export default Schat;

@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+
+import SchatIn from './SchatIn';
+
+import '../styles/Styles.css';
+
+class SchatBox extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.renderMessages = this.renderMessages.bind(this);
+  }
+
+  renderMessages() {   
+    let schatLog = this.props.schatLog;
+    let x = 0;
+    if (schatLog.length === 0) {
+      return (
+        <SchatIn schatMessage="Welcome to Schat, watch your step." />
+      );
+    } else {
+      return schatLog.map(msg => ( 
+        <SchatIn schatMessage={msg} key={Date.now()}/>)
+        );      
+    }
+  }
+
+  render() {
+    return (
+      <div className="SchatBox">
+          {this.renderMessages()}
+      </div>
+    );
+  }
+}
+
+export default SchatBox;

@@ -1,0 +1,50 @@
+import React, { Component } from 'react';
+
+import '../styles/Styles.css';
+
+class SchatForm extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { schatMessage: '' };
+
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
+  }
+
+  handleUpdate(event) {
+    this.setState({ schatMessage: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.sendMessage();
+  }
+
+  sendMessage() {
+    this.props.sendMessage(this.state.schatMessage);
+    this.setState({ schatMessage: '' });
+  }
+
+//  focusMethod() {
+//    return(
+//      document.getElementById(
+//    );
+//  }
+
+  render() {
+    return (
+      <div className="SchatForm">
+        <form onSubmit={this.handleSubmit}>
+        <input type="text"
+          onChange={this.handleUpdate}
+          value={this.state.schatMessage} />
+        <button id="schatBtn" onClick={this.sendMessage}>Send</button>
+      </form>
+      </div>
+    );
+  }
+}
+
+export default SchatForm;

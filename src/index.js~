@@ -1,0 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Schat from './components/Schat';
+import './styles/Styles.css';
+
+ReactDOM.render(
+  <Schat />,
+  document.getElementById('root')
+);
